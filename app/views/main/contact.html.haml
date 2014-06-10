@@ -1,13 +1,14 @@
 .grid_3
 .grid_10.contact_content
-  %script $(function(){Contact.init();});
+  %script 
+    $(function(){Contact.init();});
 
   - if flash[:notice].present?
     .flash
       = flash[:notice]
 
-  = form_tag( send_contact_path, method: :post) do -
-    %input{type:"hidden", name:"notemail", id:"notemail"}
+  = form_tag( send_contact_path, method: :post) do
+    %input{type:"hidden", name:"notemail", id:"notemail" }
     %p
       %label Email
       %input{type: "email", name:"email", placeholder: "", id: "email", required: true}
@@ -19,4 +20,5 @@
 
     %p
       %input{type: "submit", value: "SEND", id: "submit_btn"}
+
 .grid_3
