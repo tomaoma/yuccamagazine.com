@@ -1,10 +1,19 @@
 !!!
 %html
   %head
-    %title Yuccamagazine
+    %title yucca magazine
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
+    %link{href: "/assets/favicon.ico", rel: "icon", type: "image/x-icon"}/
+    %link{href: "/assets/favicon.ico", rel: "shortcut icon", type: "image/x-icon"}/
+    %link{href: "/assets/favicon.ico", rel: "shortcut icon", type: "image/vnd.microsoft.icon"}/
+
+    %meta{content: "http://zangato.com", name: "generator"}/
+    %meta{content: "Zan Gato (http://zangato.com)", name: "author"}/
+    %meta{content: "magazine,photography,art,collage,photo,city,people,nature", name: "keyword"}/
+    %meta{content: "yucca magazine - is attention distruction art magazine that collects all best shots/work/concepts around the world and mix them in unforgettable visual experience.", name:"description"}
   %body
     .container_16
       .grid_9.menu
