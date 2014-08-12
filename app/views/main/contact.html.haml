@@ -10,12 +10,12 @@
   = form_tag( send_contact_path, method: :post) do
     %input{type:"hidden", name:"notemail", id:"notemail" }
     %p
-      %label Email
+      %label email
       %input{type: "email", name:"email", placeholder: "", id: "email", required: true}
 
 
     %p
-      %label Comments
+      %label what's up?
       %textarea{cols: 70, rows: 10, placeholder: "", required: true, name: "comments"}
 
     %p

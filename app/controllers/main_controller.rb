@@ -7,6 +7,9 @@ class MainController < ApplicationController
     # flash[:notice] = "Thank you for your comments."
   end
 
+  def about
+  end
+
   def send_contact
     if params[:email] == params[:notemail] && params[:comments].present?
       DefaultMailer.contact(params[:email], params[:comments]).deliver

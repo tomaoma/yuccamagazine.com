@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'contact' => 'main#contact'
   post 'send_contact' => 'main#send_contact'
 
+  get 'about' => 'main#about'
   
   root 'main#home'
   # The priority is based upon order of creation: first created -> highest priority.
