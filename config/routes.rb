@@ -1,10 +1,29 @@
 Rails.application.routes.draw do
+  
+  devise_for :users
+
+  #Contact
   get 'contact' => 'main#contact'
   post 'send_contact' => 'main#send_contact'
 
-  get 'about' => 'main#about'
+  # Subscriptions
+  post 'subscriptions/create', as: 'subscriptions_create'
+  get 'subscriptions/success', as: 'subscriptions_success'
+  get 'subscriptions/unsubscribe', as: 'subscriptions_unsubscribe'
   
-  root 'main#home'
+  # About
+  get 'about' => 'main#about'
+
+  # Admin
+  get 'admin/index'
+  post 'admin/send_subscriptions', as: 'admin_send_subscriptions'
+  resources :messages do
+    post :send_single
+    post :send_all
+  end
+
+  root 'main#home', as: 'home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
