@@ -56,7 +56,7 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:message_id])
     @email = params[:email]
     SubscriptionMailer.one_email(@email, @message.body).deliver
-    redirect_to admin_index_path, notice: 'Successfully delivered.'
+    redirect_to message_path(@message), notice: 'Successfully delivered.'
   end
 
   def send_all
@@ -64,7 +64,7 @@ class MessagesController < ApplicationController
     Subscription.all.find_each do |s|    
       SubscriptionMailer.one_email(s.email, @message.body).deliver
     end
-    redirect_to admin_index_path, notice: 'Successfully delivered.'
+    redirect_to message_path(@message), notice: 'Successfully delivered.'
   end
 
   # DELETE /messages/1

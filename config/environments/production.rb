@@ -91,6 +91,8 @@ Rails.application.configure do
     :authentication => :plain
   }
   config.action_mailer.default_url_options = { host: 'yuccamagazine.com' }
+  config.action_mailer.asset_host = 'yuccamagazine.com'
+
 end
 Rails.application.routes.default_url_options[:host] = 'yuccamagazine.com'
 
