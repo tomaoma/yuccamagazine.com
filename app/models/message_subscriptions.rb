@@ -1,4 +1,4 @@
 class MessageSubscriptions < ActiveRecord::Base
-  belong_to :message
-  belong_to :subscription
+  belongs_to :message
+  belongs_to :subscription
 end
