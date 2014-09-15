@@ -1,0 +1,15 @@
+= yield
+
+%hr{noshade:'noshade', size:'1px', align: 'center', width: '80%'}
+You can unsubscribe by clicking this link: 
+= link_to subscriptions_unsubscribe_url(email: @base64_email), subscriptions_unsubscribe_url(email: @base64_email)
+
+:css
+  body{
+    font-family: Hero-Light
+  }
+
+  @font-face{
+    font-family: Hero-Light
+    src: url('/fonts/Hero Light.otf')
+  }

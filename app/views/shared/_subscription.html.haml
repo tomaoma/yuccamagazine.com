@@ -1,0 +1,14 @@
+%script 
+  $(function(){Contact.init();});
+Subscribe to recieve update of new Yucca Magazine issue
+- if flash[:notice].present?
+  .flash
+    = flash[:notice]
+
+= form_tag( subscriptions_create_path, method: :post) do
+  %input{type:"hidden", name:"notemail", id:"notemail" }
+  %p
+    %label email
+    %input{type: "email", name:"email", placeholder: "", id: "email", required: true}
+  %p
+    %input{type: "submit", value: "SUBSCRIBE", id: "submit_btn"}
