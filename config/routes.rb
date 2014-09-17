@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post 'subscriptions/create', as: 'subscriptions_create'
   get 'subscriptions/success', as: 'subscriptions_success'
   get 'subscriptions/unsubscribe', as: 'subscriptions_unsubscribe'
+  get 'subscriptions/unsubscribe_static', as: 'subscriptions_unsubscribe_static'
   
   # About
   get 'about' => 'main#about'

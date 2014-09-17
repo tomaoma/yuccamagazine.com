@@ -8,5 +8,5 @@
     @submitbtn = $('#submit_btn').click @onClick
 
 
-  onClick: =>
+  onClick: (event)=>
     Contact.notemail.val( Contact.email.val() ) 

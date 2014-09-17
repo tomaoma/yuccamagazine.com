@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+if (!window.btoa) {
+    window.btoa = function(str) {
+        return Base64.encode(str);
+    }
+}
+
+if (!window.atob) {
+    window.atob = function(str) {
+        return Base64.decode(str);
+    }
+}

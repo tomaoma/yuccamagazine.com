@@ -1,14 +1,28 @@
-%script 
-  $(function(){Contact.init();});
-Subscribe to recieve update of new Yucca Magazine issue
-- if flash[:notice].present?
-  .flash
-    = flash[:notice]
+.subscription_block
+  %script 
+    $(function(){Subscription.init();});
+  %h2 mailing list
+  sign up with your email 
+  %br
+  to subscribe to yucca magazine
+  = form_tag( subscriptions_create_path, method: :post, id: "subscription_form") do
+    %input{type:"hidden", name:"notemail", id:"notemail" }
+    %p
+      %input{type: "email", name:"email", placeholder: "email address", id: "email", required: true}
+      %input{type: "submit", value: "sign up", id: "submit_btn"}
 
-= form_tag( subscriptions_create_path, method: :post) do
-  %input{type:"hidden", name:"notemail", id:"notemail" }
-  %p
-    %label email
-    %input{type: "email", name:"email", placeholder: "", id: "email", required: true}
-  %p
-    %input{type: "submit", value: "SUBSCRIBE", id: "submit_btn"}
+  .notes
+    we respect your trust 
+    %br
+    and promise to send nothing but art.
+
+.subscription_message
+  %h2 thank you
+  You will receave fresh editions
+  %br
+  of yucca magazine in your inbox
+  %br
+  %br
+  .notes
+    you can always unsubscribe 
+    = link_to 'here', subscriptions_unsubscribe_static_path
