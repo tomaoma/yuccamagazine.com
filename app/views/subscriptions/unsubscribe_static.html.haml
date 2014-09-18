@@ -1,0 +1,11 @@
+.grid_18.center
+  .subscription_block.unsubscribe
+    %script
+      $(function(){Unsubscription.init();});
+    %h2 unsubscribe
+    enter your email
+    = form_tag( subscriptions_unsubscribe_path, method: :get, id: "subscription_form") do
+      %input{type:"hidden", name:"email", id:"email" }
+      %p
+        %input{type: "email", placeholder: "email address", id: "email", required: true}
+        %input{type: "submit", value: "unsubscribe", id: "submit_btn"}
