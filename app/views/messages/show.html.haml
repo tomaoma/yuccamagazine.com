@@ -12,7 +12,7 @@
     %input{type: "email", name:"email", placeholder: "", id: "email", required: true}
   %p
     %input{type: "submit", value: "SEND ONCE", id: "submit_btn"}
-= form_tag( message_send_single_path(@message), method: :post) do
+= form_tag( message_send_all_path(@message), method: :post) do
   %p
     %input{type: "submit", value: "SEND ALL", id: "submit_btn"}
 
