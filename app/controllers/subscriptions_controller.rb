@@ -16,7 +16,7 @@ class SubscriptionsController < ApplicationController
     end
 
     respond_to do |format|
-      redirect_to home_path, flash: {notice: "Thank you for your subscription."}
+      format.html{ redirect_to home_path, flash: {notice: "Thank you for your subscription."} }
       format.json{ render :ok }
     end
 
