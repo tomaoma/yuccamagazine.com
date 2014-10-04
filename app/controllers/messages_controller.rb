@@ -55,14 +55,14 @@ class MessagesController < ApplicationController
   def send_single
     @message = Message.find(params[:message_id])
     @email = params[:email]
-    SubscriptionMailer.one_email(@email, @message.body).deliver
+    SubscriptionMailer.one_email(@email, @message).deliver
     redirect_to message_path(@message), notice: 'Successfully delivered.'
   end
 
   def send_all
     @message = Message.find(params[:message_id])
     Subscription.all.find_each do |s|    
-      SubscriptionMailer.one_email(s.email, @message.body).deliver
+      SubscriptionMailer.one_email(s.email, @message).deliver
     end
     redirect_to message_path(@message), notice: 'Successfully delivered.'
   end
@@ -85,6 +85,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:body)
+      params.require(:message).permit(:body, :subject)
     end
 end

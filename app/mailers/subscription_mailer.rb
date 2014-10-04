@@ -1,15 +1,15 @@
 require 'base64'
 class SubscriptionMailer < ActionMailer::Base
-  default from: 'contact@yuccamagazine.com'
+  default from: 'yucca magazine<contact@yuccamagazine.com>'
   layout 'subscription_mailer'
  
-  def one_email(email, body)
+  def one_email(email, message)
     @email = email
-    @body  = body
+    @body  = message.body
 
     #This required by everyemail
     @base64_email = Base64.encode64(email)
 
-    mail(to: email, subject: "Yucca Magazine update")
+    mail(to: email, subject: message.subject || "yucca magazine update")
   end
 end

@@ -3,6 +3,7 @@
 %ul
   - @messages.each do |message|
     %li
+      %span= message.subject
       %span= message.short_body
       %span
         = link_to 'Show', message_path(message)
