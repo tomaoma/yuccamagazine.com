@@ -1,11 +1,10 @@
 .grid_13
   .issue_content
-    .issuuembed{"data-configid" => "12045164/8909460", style: "width: 740px; height: 523px; float: middle;"}
-    %script{async: "true", src: "//e.issuu.com/embed.js", type: "text/javascript"}
-  
-  .issue_content
-    .issuuembed{"data-configid" => "11690236/8226721", style: "width: 740px; height: 523px; float: middle;"}
-    %script{async: "true", src: "//e.issuu.com/embed.js", type: "text/javascript"}
+    = raw @issues.first.html
+
+  - @issues[1..@issues.count].each do |issue|
+    .issue_content.small
+      = raw issue.html
 
 .grid_5
-  = render 'shared/subscription'
+  = render 'shared/subscription'  

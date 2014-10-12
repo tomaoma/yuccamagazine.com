@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+
   devise_for :users
 
   #Contact
@@ -16,8 +17,12 @@ Rails.application.routes.draw do
   get 'about' => 'main#about'
 
   # Admin
-  get 'admin/index'
-  post 'admin/send_subscriptions', as: 'admin_send_subscriptions'
+  namespace :admin do
+    get 'index' => 'stuff#index', as: 'index'
+    post 'send_subscriptions' => 'stuff#send_subscriptions', as: 'send_subscriptions'
+    resources :issues
+  end
+
   resources :messages do
     post :send_single
     post :send_all

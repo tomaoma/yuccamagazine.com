@@ -1,6 +1,7 @@
 class MainController < ApplicationController
 
   def home
+    @issues = Issue.order('name DESC').all
   end
 
   def contact

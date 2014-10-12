@@ -20,6 +20,12 @@
         %a{href: "/"} home
         %a{href: "/about"} about
         %a{href: "/contact"} contact
+        - if current_user
+          %br
+          Admin: 
+          %a{href:"/admin/index"} home
+          %a{href:"/admin/issues"} issues
+          = link_to 'logout', destroy_user_session_path, method: :delete
 
       .grid_7.logo
         %h1 yucca 
