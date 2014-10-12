@@ -12,6 +12,16 @@
 = link_to 'New Message', new_message_path 
 
 %h1 Subscribers
+= form_tag( admin_add_subscriber_path, method: :post) do
+  %p
+    %label email
+    %input{type: "email", name:"email", placeholder: "", id: "email", required: true}
+  %p
+    %input{type: "submit", value: "add", id: "submit_btn"}
+
+
 %ul
   - @subscriptions.each do |sub|
-    %li=sub.email
+    %li
+      = sub.email
+      = link_to 'Delete', admin_remove_subscriber_path(email: sub.email), method: :delete, data: { confirm: 'Are you sure?' }

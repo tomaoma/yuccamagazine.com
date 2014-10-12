@@ -18,4 +18,19 @@ class Admin::StuffController < ApplicationController
     redirect_to admin_index_path, notice: 'success'
   end
 
+  def add_subscriber
+    subscription = Subscription.find_by_email(params[:email])
+    unless subscription
+      Subscription.create(email: params[:email])
+    end
+    redirect_to admin_index_path
+  end
+
+  def remove_subscriber
+    subscription = Subscription.find_by_email(params[:email])
+    if subscription
+      subscription.destroy!
+    end
+    redirect_to admin_index_path
+  end
 end

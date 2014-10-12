@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'index' => 'stuff#index', as: 'index'
     post 'send_subscriptions' => 'stuff#send_subscriptions', as: 'send_subscriptions'
+    post 'add_subscriber' => 'stuff#add_subscriber', as:'add_subscriber'
+    delete 'remove_subscriber' => 'stuff#remove_subscriber', as:'remove_subscriber'
     resources :issues
   end
 
