@@ -1,10 +1,7 @@
-.grid_13
-  .issue_content
+.grid_18
+  .issue_content.large
     = raw @issues.first.html
 
   - @issues[1..@issues.count].each do |issue|
     .issue_content.small
       = raw issue.html
-
-.grid_5
-  = render 'shared/subscription'  
