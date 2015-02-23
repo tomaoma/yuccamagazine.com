@@ -1,7 +1,4 @@
 .grid_18
   .issue_content.large
-    = raw @issues.first.html
-
-  - @issues[1..@issues.count].each do |issue|
-    .issue_content.small
-      = raw issue.html
+    - @issues.each do |issue|
+      = raw @issues.first.html
