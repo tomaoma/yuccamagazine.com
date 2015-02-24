@@ -16,44 +16,31 @@
     %meta{content: "yucca magazine - is attention distruction art magazine that collects all best shots/work/concepts around the world and mix them in unforgettable visual experience.", name:"description"}
   %body
     .container_18
-      .grid_11.menu
-        %a{href: "/"} home
-        %a{href: "/about"} about
-        %a{href: "/contact"} contact
-        - if current_user
-          %br
-          Admin: 
-          %a{href:"/admin/index"} home
-          %a{href:"/admin/issues"} issues
-          = link_to 'logout', destroy_user_session_path, method: :delete
-
-      .grid_7.logo
-        %h1 yucca 
-        %h2 magazine
-    .container_18  
-      = yield
+      .grid_3
+        &nbsp;
+        .fixed_div
+          .logo
+            %h1 yucca 
+            %h2 magazine
+          .menu
+            %a{href: "/", class: @page == "home" ? "selected": ""} home
+            %a{href: "/about", class: @page == "about" ? "selected": ""} about
+            %a{href: "/contact", class: @page == "contact" ? "selected": ""} contact
+            - if current_user
+              %br
+              Admin: 
+              %a{href:"/admin/index"} home
+              %a{href:"/admin/issues"} issues
+              = link_to 'logout', destroy_user_session_path, method: :delete
+          .footer
+            %a{href: "https://www.facebook.com/yuccamagazine", target: "_blank"}
+              %img{src: asset_path('FB_bw.png'), alt: "Facebook", onmouseover: "this.src='#{asset_path('FB_color.png')}'", onmouseout: "this.src='#{asset_path('FB_bw.png')}'", width: 20, height:20}
+            %a{href: "http://yuccamagazine.tumblr.com", target: "_blank"}
+              %img{src: asset_path('Tumblr_bw.png'), alt: "Tumblr", onmouseover: "this.src='#{asset_path('Tumblr_color.png')}'", onmouseout: "this.src='#{asset_path('Tumblr_bw.png')}'", width: 20, height:20}
+            .clear
+            .copyright
+              © 2014 yucca magazine<br/>non-commercial online magazine<br/>ALL RIGHTS RESERVED
+      .grid_15
+        = yield
 
     .clear
-    .container_18.footer
-      .grid_4
-        &nbsp;
-      .grid_10.bottom
-        %a{href: "https://www.facebook.com/yuccamagazine", target: "_blank"}
-          %img{src: asset_path('FB_bw.png'), alt: "Facebook", onmouseover: "this.src='#{asset_path('FB_color.png')}'", onmouseout: "this.src='#{asset_path('FB_bw.png')}'"}
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        %a{href: "http://yuccamagazine.tumblr.com", target: "_blank"}
-          %img{src: asset_path('Tumblr_bw.png'), alt: "Tumblr", onmouseover: "this.src='#{asset_path('Tumblr_color.png')}'", onmouseout: "this.src='#{asset_path('Tumblr_bw.png')}'"}
-        %br
-        %br
-        %br
-        © 2014 "yucca magazine" non-commercial online magazine. 
-        ALL RIGHTS RESERVED.
-        %br
-        This magazine contains material protected under International and Federal Copyright Laws and Treaties. No part of these pages, either text or image may be used for any purpose other than personal use. Any unauthorized reprint or use of this material is prohibited. No part of this magazine may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, or by any information storage and retrieval system without express written permission from the magazine.
-        %br
-        %br
-        %br
-      .grid_4
-        &nbsp;

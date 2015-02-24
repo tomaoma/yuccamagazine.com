@@ -1,40 +1,35 @@
-.grid_3
-  &nbsp;
+.grid_12
+  .contact_content
+    %p.title hey there!
+    %span
+      Want to ask a question?
+      %br
+      %br
+      Or maybe you create something exciting and interesting?
+      %br
+      Let us help you to share it with the world!
+      %br
+      Send your works and details for chance to be featured:
+      %br
+      %br
 
-.grid_12.contact_content
-  %h2 hey there!
-  %span
-    want to ask a question?
-    %br
-    %br
-    or maybe you create something exciting and interesting?
-    %br
-    let us help you to share it with the world!
-    %br
-    send your works and details for chance to be featured:
-    %br
-    %br
+    %script 
+      $(function(){Contact.init();});
 
-  %script 
-    $(function(){Contact.init();});
+    - if flash[:notice].present?
+      .flash
+        = flash[:notice]
 
-  - if flash[:notice].present?
-    .flash
-      = flash[:notice]
-
-  = form_tag( send_contact_path, method: :post) do
-    %input{type:"hidden", name:"notemail", id:"notemail" }
-    %p
-      %label email
-      %input{type: "email", name:"email", placeholder: "", id: "email", required: true}
+    = form_tag( send_contact_path, method: :post) do
+      %input{type:"hidden", name:"notemail", id:"notemail" }
+      %p
+        %label email
+        %input{type: "email", name:"email", placeholder: "", id: "email", required: true}
 
 
-    %p
-      %label what's up?
-      %textarea{cols: 70, rows: 10, placeholder: "", required: true, name: "comments"}
+      %p
+        %label what's up?
+        %textarea{cols: 70, rows: 10, placeholder: "", required: true, name: "comments"}
 
-    %p
-      %input{type: "submit", value: "send", id: "submit_btn"}
-
-.grid_3
-  &nbsp;
+      %p
+        %input{type: "submit", value: "send", id: "submit_btn"}

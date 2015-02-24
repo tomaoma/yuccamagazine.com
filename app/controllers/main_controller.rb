@@ -2,13 +2,16 @@ class MainController < ApplicationController
 
   def home
     @issues = Issue.order('name DESC').all
+    @page = "home"
   end
 
   def contact
     # flash[:notice] = "Thank you for your comments."
+    @page = "contact"
   end
 
   def about
+    @page = "about"
   end
 
   def send_contact

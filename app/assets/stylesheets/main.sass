@@ -7,6 +7,10 @@ body
   font-family: code-light
   src: url('/fonts/CODE Light.otf')
 
+@font-face 
+  font-family: code-bold
+  src: url('/fonts/CODE Bold.otf')
+
 @font-face
   font-family: Monofett
   src: url('/fonts/Monofett.ttf')
@@ -20,37 +24,62 @@ body
   src: url('/fonts/Hero Light.otf')
 
 
+.fixed_div
+  width: 180px
+  height: 600px
+  position: fixed
 
 .menu 
+  width: 100%
   padding-top: 2px
   a
-    font-family: Aller-It
-    font-size: 30px  
+    width: 100%
+    display: block
+    text-align: right
+    font-family: code-bold
+    font-size: 16px  
     color: #333
     text-decoration: none
-    padding-right: 70px
+    padding-top: 10px
+  a:hover
+    color: #45ad9f
+  a.selected
+    color: #45ad9f
 
 .footer
-  padding-top: 300px
+  padding-top: 350px
   padding-bottom: 50px
+  color: #CCC
+  font-size: 8px
+  a
+    padding-left: 5px
+    float: right
+    text-decoration: none
+    padding-right: 3px
+  .copyright
+    padding-top: 10px
+    width: 100%
+    text-align: right
+
 
 .logo
+  width: 100%
   text-align: right
   h1
     font-family: Monofett
-    font-size: 94px
+    font-size: 55px
     font-weight: normal
     padding: 0px
     margin: 0px
-    letter-spacing: 7px
-    line-height: 70px
-    margin-right: -7px
+    letter-spacing: 4px
+    line-height: 50px
+    margin-right: -3px
 
   h2
     font-family: Aller-It
-    font-size: 37px
+    font-size: 20px
     font-weight: normal
-    margin-top: 5px
+    margin-top: 0px
     margin-right: 7px
 
 
@@ -105,16 +134,23 @@ form
   margin-bottom: 50px
 
 .contact_content
-  padding-top: 50px
+  padding-left: 60px
+  padding-top: 90px
   span
     line-height: 20px
     letter-spacing: 0.5px
   h2
     font-family: Aller-It
+  p.title
+    font-weight: bold
+    font-size: 21px
+    font-family: Aller-It
+
   input
     width: 425px
   textarea
     width: 425px
+
   input[type=submit]
     background-color: #333
     color: #fff
@@ -127,14 +163,17 @@ form
     font-size: 16px
 
 
-.abount_content
+.about_content
+  padding-left: 60px
+  padding-right: 60px
+  padding-top: 90px
   p.title
     font-weight: bold
-    font-size: 25px
+    font-size: 21px
     font-family: Aller-It
 
   p
-    line-height: 25px
+    line-height: 23px
     letter-spacing: 0.5px
 
 .embed-links
@@ -142,6 +181,9 @@ form
 
 .issuuembed div div:last-child
   display: none
+
+.issue_container
+  margin-top: 87px
 
 .issuu_content
   margin-left: 110px
@@ -177,15 +219,21 @@ form
   text-align: center
 
 .subscription_block
-  margin-top: 75px
+  position: fixed
+  float: right
+  width: 290px
+  margin-top: 109px
+  height: 200px
   background-color: #f2f2f2
-  padding: 10px
   text-align: center
   font-family: Hero-Light
   font-size: 14px
-  height: 200px
   line-height: 18px
   letter-spacing: 0.5px
+
+  padding: 10px
+  padding-left: 0px
+  padding-right: 0px
 
 
   h2
@@ -219,6 +267,7 @@ form
     line-height: 12px
 
 .subscription_message
+  position: fixed
   display: none
   margin-top: 50px
   background-color: #f2f2f2

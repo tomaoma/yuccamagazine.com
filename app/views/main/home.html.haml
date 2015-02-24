@@ -1,4 +1,4 @@
-.grid_18
-  .issue_content.large
-    - @issues.each do |issue|
+.issue_container
+  - @issues.each do |issue|
+    .issue_content.large
       = raw issue.html
