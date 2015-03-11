@@ -14,6 +14,7 @@
     %meta{content: "Zan Gato (http://zangato.com)", name: "author"}/
     %meta{content: "magazine,photography,art,collage,photo,city,people,nature", name: "keyword"}/
     %meta{content: "yucca magazine - is attention distruction art magazine that collects all best shots/work/concepts around the world and mix them in unforgettable visual experience.", name:"description"}
+    = render 'shared/google_analytics'
   %body
     .container_18
       .grid_3
@@ -32,6 +33,8 @@
               %a{href:"/admin/index"} home
               %a{href:"/admin/issues"} issues
               = link_to 'logout', destroy_user_session_path, method: :delete
+
+          = render 'shared/subscription'
           .footer
             %a{href: "https://www.facebook.com/yuccamagazine", target: "_blank"}
               %img{src: asset_path('FB_bw.png'), alt: "Facebook", onmouseover: "this.src='#{asset_path('FB_color.png')}'", onmouseout: "this.src='#{asset_path('FB_bw.png')}'", width: 20, height:20}
