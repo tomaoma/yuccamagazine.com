@@ -1,4 +1,5 @@
 class MainController < ApplicationController
+  caches_page :home, :contact, :about
 
   def home
     @issues = Issue.order('name DESC').all

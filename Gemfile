@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'thin'
 gem 'devise'
 gem "bugsnag"
+gem 'actionpack-page_caching'
 
 group :development do
   gem 'spring'

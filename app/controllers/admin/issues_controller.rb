@@ -29,6 +29,7 @@ class Admin::IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.save
+        expire_page 'main/home'
         format.html { redirect_to [:admin,@issue], notice: 'Issue was successfully created.' }
         format.json { render :show, status: :created, location: @issue }
       else
@@ -43,6 +44,7 @@ class Admin::IssuesController < ApplicationController
   def update
     respond_to do |format|
       if @issue.update(issue_params)
+        expire_page 'main/home'
         format.html { redirect_to [:admin, @issue], notice: 'Issue was successfully updated.' }
         format.json { render :show, status: :ok, location: @issue }
       else
