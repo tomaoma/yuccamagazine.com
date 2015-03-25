@@ -34,7 +34,7 @@
               %a{href:"/admin/issues"} issues
               = link_to 'logout', destroy_user_session_path, method: :delete
 
-          = #render 'shared/subscription'
+          = render 'shared/subscription'
           .footer
             %a{href: "https://www.facebook.com/yuccamagazine", target: "_blank"}
               %img{src: asset_path('FB_bw.png'), alt: "Facebook", onmouseover: "this.src='#{asset_path('FB_color.png')}'", onmouseout: "this.src='#{asset_path('FB_bw.png')}'", width: 20, height:20}
