@@ -1,27 +1,29 @@
-%h1 Messages
+.admin
+  %h1 Messages
 
-%ul
-  - @messages.each do |message|
-    %li
-      %span= message.subject
-      %span= message.short_body
-      %span
-        = link_to 'Show', message_path(message)
-        = link_to 'Edit', edit_message_path(message)
-        = link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' }
-= link_to 'New Message', new_message_path 
+  %ul
+    - @messages.each do |message|
+      %li
+        %span= message.subject
+        %span= message.short_body
+        %span
+          = link_to 'Show', message_path(message)
+          = link_to 'Edit', edit_message_path(message)
+          = link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' }
+  = link_to 'New Message', new_message_path 
 
-%h1 Subscribers
-= form_tag( admin_add_subscriber_path, method: :post) do
-  %p
-    %label email
-    %input{type: "email", name:"email", placeholder: "", id: "email", required: true}
-  %p
-    %input{type: "submit", value: "add", id: "submit_btn"}
+  %h1 Subscribers
+  = form_tag( admin_add_subscriber_path, method: :post) do
+    %p
+      %label email
+      %input{type: "email", name:"email", placeholder: "", id: "email", required: true}
+    %p
+      %input{type: "submit", value: "add", id: "submit_btn"}
 
 
-%ul
-  - @subscriptions.each do |sub|
-    %li
-      = sub.email
-      = link_to 'Delete', admin_remove_subscriber_path(email: sub.email), method: :delete, data: { confirm: 'Are you sure?' }
+  %ul
+    - @subscriptions.each do |sub|
+      %li
+        = sub.email
+        = link_to 'Delete', admin_remove_subscriber_path(email: sub.email), method: :delete, data: { confirm: 'Are you sure?' }
+
