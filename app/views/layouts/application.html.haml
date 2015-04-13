@@ -30,7 +30,7 @@
             - if current_user
               %br
               Admin: 
-              %a{href:"/admin/index"} home
+              %a{href:"/admin/index"} messages
               %a{href:"/admin/issues"} issues
               = link_to 'logout', destroy_user_session_path, method: :delete
 
