@@ -21,6 +21,7 @@ group :development do
   gem 'sqlite3'
   gem 'capistrano'
   gem 'capistrano-rails'
+  gem 'capistrano-rbenv', '~> 2.0', require: false
 end
 
 group :production do

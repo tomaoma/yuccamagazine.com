@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'yuccamagazine.com'
-set :repo_url, 'git@heroku.com:yuccamagazine.git'
+set :repo_url, 'git@github.com:defsan/yuccamagazine.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -10,6 +10,8 @@ set :repo_url, 'git@heroku.com:yuccamagazine.git'
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/var/www/my_app_name'
 set :deploy_to, '/home/deploy/www/yuccamagazine'
+set :deploy_via, :copy
+set :rbenv_ruby, '2.1.2'
 
 # Default value for :scm is :git
 # set :scm, :git
