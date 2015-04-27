@@ -48,7 +48,7 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+      execute "service thin restart"  ## -> line you should add
     end
   end
-
 end
