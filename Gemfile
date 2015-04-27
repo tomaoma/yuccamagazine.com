@@ -19,9 +19,12 @@ gem 'actionpack-page_caching'
 group :development do
   gem 'spring'
   gem 'sqlite3'
+  gem 'capistrano'
+  gem 'capistrano-rails'
 end
 
 group :production do
   gem 'pg'
+  gem 'mysql2'
 end
 
