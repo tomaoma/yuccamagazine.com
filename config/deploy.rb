@@ -48,7 +48,12 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-      execute "service thin restart"  ## -> line you should add
+      within release_path do
+        # execute "bundle exec thin -C config/thin.yml -O restart"  ## -> line you should add
+        execute "service thin restart"
+      end
     end
   end
+  after :publishing, :restart
 end
+
