@@ -14,7 +14,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -31,9 +31,24 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+ 
+  # config.action_mailer.default_url_options = { host: 'localhost:3000' }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.action_mailer.asset_host = 'localhost:3000'
+  # config.action_mailer.asset_host = 'localhost:3000'
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :port           => "3535",
+    :address        => "smtpout.secureserver.net",
+    :user_name      => "contact@yuccamagazine.com",
+    :password       => "chocolatecookies",
+    :domain         => "yuccamagazine.com",
+    :authentication => :plain
+  }
+  config.action_mailer.default_url_options = { host: 'yuccamagazine.com' }
+  config.action_mailer.asset_host = 'yuccamagazine.com'
+
 end
 Rails.application.routes.default_url_options[:host] = 'yuccamagazine.com'
