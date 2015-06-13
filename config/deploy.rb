@@ -49,7 +49,7 @@ namespace :deploy do
       #   execute :rake, 'cache:clear'
       # end
       within release_path do
-        execute "RAILS_ENV=production bundle exec thin -C config/thin.yml -O restart"  ## -> line you should add
+        execute :bundle, "exec RAILS_ENV=production thin -C config/thin.yml -O restart"  ## -> line you should add
         #execute "service thin restart"
       end
     end
