@@ -11,7 +11,6 @@ set :repo_url, 'git@gitlab.com:defsan/yuccamagazine.git'
 # set :deploy_to, '/var/www/my_app_name'
 set :deploy_to, '/home/deploy/www/yuccamagazine'
 set :deploy_via, :copy
-set :rbenv_ruby, '2.1.2'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -56,4 +55,3 @@ namespace :deploy do
   end
   after :publishing, :restart
 end
-

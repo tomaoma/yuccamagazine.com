@@ -15,17 +15,15 @@ gem 'thin'
 gem 'devise'
 gem "bugsnag"
 gem 'actionpack-page_caching'
-
+gem 'eventmachine', '~>1.0.4'
 group :development do
   gem 'spring'
   gem 'sqlite3'
   gem 'capistrano'
   gem 'capistrano-rails'
-  gem 'capistrano-rbenv', '~> 2.0', require: false
 end
 
 group :production do
   gem 'pg'
   gem 'mysql2'
 end
-
